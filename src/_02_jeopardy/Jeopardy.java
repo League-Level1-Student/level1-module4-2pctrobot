@@ -32,13 +32,31 @@ import game_tools.Sound;
 
 public class Jeopardy implements ActionListener {
 	private JButton firstButton;
+	private JButton firstButton2;
+	private JButton firstButton3;
+	private JButton firstButton4;
+	private JButton firstButton5;
 	private JButton secondButton;
+	private JButton secondButton2;
+	private JButton secondButton3;
+	private JButton secondButton4;
+	private JButton secondButton5;
 	private JButton thirdButton;
+	private JButton thirdButton2;
+	private JButton thirdButton3;
+	private JButton thirdButton4;
+	private JButton thirdButton5;
 	private JButton fourthButton;
+	private JButton fourthButton2;
+	private JButton fourthButton3;
+	private JButton fourthButton4;
+	private JButton fourthButton5;
 	private JButton fifthButton;
-	private JButton sixthButton;
+	private JButton fifthButton2;
+	private JButton fifthButton3;
+	private JButton fifthButton4;
+	private JButton fifthButton5;
 	private JPanel quizPanel;
-	private JPanel quizPanel2;
 	private int score = 0;
 	private JLabel scoreBox = new JLabel("0");
 	private int buttonCount = 0;
@@ -50,7 +68,6 @@ public class Jeopardy implements ActionListener {
 		JFrame frame = new JFrame();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		quizPanel = new JPanel();
-		quizPanel2 = new JPanel();
 		frame.setLayout(new BorderLayout());
 
 		// 1. Make the frame show up
@@ -60,38 +77,111 @@ public class Jeopardy implements ActionListener {
 		// 3. Create a JPanel variable to hold the header using the createHeader method
 		JPanel header = createHeader("Risk Of Rain 2 Survivors");
 		JPanel header2 = createHeader("Risk Of Rain 2 Stages");
+		JPanel header3 = createHeader("Risk Of Rain 2 Hidden Stages");
+		JPanel header4 = createHeader("Risk Of Rain 2 Items");
+		JPanel header5 = createHeader("Risk Of Rain 2 Enemies");
 		// 4. Add the header component to the quizPanel
 		quizPanel.add(header);
-		quizPanel2.add(header2);
+		quizPanel.add(header2);
+		quizPanel.add(header3);
+		quizPanel.add(header4);
+		quizPanel.add(header5);
+//		frame.add(header);
+//		frame.add(header3);
+//		frame.add(header2);
+//		frame.add(header4);
+//		frame.add(header5);
+		
 		// 5. Add the quizPanel to the frame
 		frame.add(quizPanel);
-		frame.add(quizPanel2);
 		// 6. Use the createButton method to set the value of firstButton
-		firstButton = createButton("$200");
+		
 		// 7. Add the firstButton to the quizPanel
-		quizPanel.add(firstButton);
+		
 		// 8. Write the code to complete the createButton() method below. Check that your
 		// game looks like Figure 1 in the Jeopardy Handout - http://bit.ly/1bvnvd4.
 
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-		secondButton = createButton("$400");
+		
 		// 10. Add the secondButton to the quizPanel
+		firstButton = createButton("$200");
+		quizPanel.add(firstButton);
+		firstButton2 = createButton("$200");
+		quizPanel.add(firstButton2);
+		firstButton3 = createButton("$200");
+		quizPanel.add(firstButton3);
+		firstButton4 = createButton("$200");
+		quizPanel.add(firstButton4);
+		firstButton5 = createButton("$200");
+		quizPanel.add(firstButton5);
+		secondButton = createButton("$400");
 		quizPanel.add(secondButton);
+		secondButton2 = createButton("$400");
+		quizPanel.add(secondButton2);
+		secondButton3 = createButton("$400");
+		quizPanel.add(secondButton3);
+		secondButton4 = createButton("$400");
+		quizPanel.add(secondButton4);
+		secondButton5 = createButton("$400");
+		quizPanel.add(secondButton5);
 		thirdButton = createButton("$600");
 		quizPanel.add(thirdButton);
+		thirdButton2 = createButton("$600");
+		quizPanel.add(thirdButton2);
+		thirdButton3 = createButton("$600");
+		quizPanel.add(thirdButton3);
+		thirdButton4 = createButton("$600");
+		quizPanel.add(thirdButton4);
+		thirdButton5 = createButton("$600");
+		quizPanel.add(thirdButton5);
 		fourthButton = createButton("$800");
 		quizPanel.add(fourthButton);
+		fourthButton2 = createButton("$800");
+		quizPanel.add(fourthButton2);
+		fourthButton3 = createButton("$800");
+		quizPanel.add(fourthButton3);
+		fourthButton4 = createButton("$800");
+		quizPanel.add(fourthButton4);
+		fourthButton5 = createButton("$800");
+		quizPanel.add(fourthButton5);
 		fifthButton = createButton("$1000");
 		quizPanel.add(fifthButton);
-		sixthButton = createButton("$1200");
-		quizPanel.add(sixthButton);
+		fifthButton2 = createButton("$1000");
+		quizPanel.add(fifthButton2);
+		fifthButton3 = createButton("$1000");
+		quizPanel.add(fifthButton3);
+		fifthButton4 = createButton("$1000");
+		quizPanel.add(fifthButton4);
+		fifthButton5 = createButton("$1000");
+		quizPanel.add(fifthButton5);
+		
 		// 11. Add action listeners to the buttons (2 lines of code)
 		firstButton.addActionListener(this);
+		firstButton2.addActionListener(this);
+		firstButton3.addActionListener(this);
+		firstButton4.addActionListener(this);
+		firstButton5.addActionListener(this);
 		secondButton.addActionListener(this);
+		secondButton2.addActionListener(this);
+		secondButton3.addActionListener(this);
+		secondButton4.addActionListener(this);
+		secondButton5.addActionListener(this);
 		thirdButton.addActionListener(this);
+		thirdButton2.addActionListener(this);
+		thirdButton3.addActionListener(this);
+		thirdButton4.addActionListener(this);
+		thirdButton5.addActionListener(this);
 		fourthButton.addActionListener(this);
+		fourthButton2.addActionListener(this);
+		fourthButton3.addActionListener(this);
+		fourthButton4.addActionListener(this);
+		fourthButton5.addActionListener(this);
 		fifthButton.addActionListener(this);
+		fifthButton2.addActionListener(this);
+		fifthButton3.addActionListener(this);
+		fifthButton4.addActionListener(this);
+		fifthButton5.addActionListener(this);
 		// 12. Write the code to complete the actionPerformed() method below
 
 		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
@@ -102,10 +192,10 @@ public class Jeopardy implements ActionListener {
 		 */
 		
 		frame.pack();
-		quizPanel.setLayout(new GridLayout(buttonCount + 1, 3));
+		quizPanel.setLayout(new GridLayout(0, 5));
 		frame.add(makeScorePanel(), BorderLayout.NORTH);
 		frame.setSize(Toolkit.getDefaultToolkit().getScreenSize().height,
-				Toolkit.getDefaultToolkit().getScreenSize().width);
+		Toolkit.getDefaultToolkit().getScreenSize().width);
 	}
 
 
@@ -141,20 +231,81 @@ public class Jeopardy implements ActionListener {
 		// Clear the text on the button that was pressed (set the button text to nothing)
 		if(e.getSource() == firstButton) {
 			askQuestion("What survivor has a special that disables almost all attacks for 5 seconds?", "Railgunner", 200);
-			quizPanel.remove(firstButton);
+			firstButton.setVisible(false);
 	    } else if(e.getSource() == secondButton) {
 	    	askQuestion("What survivor can obtain items and drones for free?", "Captain", 400);
-	    	quizPanel.remove(secondButton);
+	    	secondButton.setVisible(false);
 	    } else if(e.getSource() == thirdButton) {
 	    	askQuestion("What survivor deals velocity based damage?", "Loader", 600);
-	    	quizPanel.remove(thirdButton);
+	    	thirdButton.setVisible(false);
 	    } else if(e.getSource() == fourthButton) {
 	    	askQuestion("What survivor has two unique debuffs?", "Acrid", 800);
-	    	quizPanel.remove(fourthButton);
+	    	fourthButton.setVisible(false);
 	    } else if(e.getSource() == fifthButton) {
 	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
-	    	quizPanel.remove(fifthButton);
+	    	fifthButton.setVisible(false);
+	    } else if(e.getSource() == firstButton2) {
+			askQuestion("What enviroment has a boss you fight for a free Legendary item?", "Siren's Call", 200);
+			firstButton2.setVisible(false);
+	    } else if(e.getSource() == secondButton2) {
+	    	askQuestion("What enviroment always comes every fifth level?", "Sky Meadow", 400);
+	    	secondButton2.setVisible(false);
+	    } else if(e.getSource() == thirdButton2) {
+	    	askQuestion("What enviroment has a Timed Security Chest?", "Rallypoint Delta", 600);
+	    	thirdButton2.setVisible(false);
+	    } else if(e.getSource() == fourthButton2) {
+	    	askQuestion("What enviroment?", "Acrid", 800);
+	    	fourthButton2.setVisible(false);
+	    } else if(e.getSource() == fifthButton2) {
+	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
+	    	fifthButton2.setVisible(false);
+	    } else if(e.getSource() == firstButton3) {
+			askQuestion("What survivor has a special that disables almost all attacks for 5 seconds?", "Railgunner", 200);
+			firstButton3.setVisible(false);
+	    } else if(e.getSource() == secondButton3) {
+	    	askQuestion("What survivor can obtain items and drones for free?", "Captain", 400);
+	    	secondButton3.setVisible(false);
+	    } else if(e.getSource() == thirdButton3) {
+	    	askQuestion("What survivor deals velocity based damage?", "Loader", 600);
+	    	thirdButton3.setVisible(false);
+	    } else if(e.getSource() == fourthButton3) {
+	    	askQuestion("What survivor has two unique debuffs?", "Acrid", 800);
+	    	fourthButton3.setVisible(false);
+	    } else if(e.getSource() == fifthButton3) {
+	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
+	    	fifthButton3.setVisible(false);
+	    } else if(e.getSource() == firstButton4) {
+			askQuestion("What survivor has a special that disables almost all attacks for 5 seconds?", "Railgunner", 200);
+			firstButton4.setVisible(false);
+	    } else if(e.getSource() == secondButton4) {
+	    	askQuestion("What survivor can obtain items and drones for free?", "Captain", 400);
+	    	secondButton4.setVisible(false);
+	    } else if(e.getSource() == thirdButton4) {
+	    	askQuestion("What survivor deals velocity based damage?", "Loader", 600);
+	    	thirdButton4.setVisible(false);
+	    } else if(e.getSource() == fourthButton4) {
+	    	askQuestion("What survivor has two unique debuffs?", "Acrid", 800);
+	    	fourthButton4.setVisible(false);
+	    } else if(e.getSource() == fifthButton4) {
+	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
+	    	fifthButton4.setVisible(false);
+	    } else if(e.getSource() == firstButton5) {
+			askQuestion("What survivor has a special that disables almost all attacks for 5 seconds?", "Railgunner", 200);
+			firstButton5.setVisible(false);
+	    } else if(e.getSource() == secondButton5) {
+	    	askQuestion("What survivor can obtain items and drones for free?", "Captain", 400);
+	    	secondButton5.setVisible(false);
+	    } else if(e.getSource() == thirdButton5) {
+	    	askQuestion("What survivor deals velocity based damage?", "Loader", 600);
+	    	thirdButton5.setVisible(false);
+	    } else if(e.getSource() == fourthButton5) {
+	    	askQuestion("What survivor has two unique debuffs?", "Acrid", 800);
+	    	fourthButton5.setVisible(false);
+	    } else if(e.getSource() == fifthButton5) {
+	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
+	    	fifthButton5.setVisible(false);
 	    }
+	    
 
 	}
 
