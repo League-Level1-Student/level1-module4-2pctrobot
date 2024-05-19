@@ -76,8 +76,8 @@ public class Jeopardy implements ActionListener {
 		frame.setTitle("Jeopardy");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
 		JPanel header = createHeader("Risk Of Rain 2 Survivors");
-		JPanel header2 = createHeader("Risk Of Rain 2 Stages");
-		JPanel header3 = createHeader("Risk Of Rain 2 Hidden Stages");
+		JPanel header2 = createHeader("Risk Of Rain 2 Enviroments");
+		JPanel header3 = createHeader("Risk Of Rain 2 Hidden Realms");
 		JPanel header4 = createHeader("Risk Of Rain 2 Items");
 		JPanel header5 = createHeader("Risk Of Rain 2 Enemies");
 		// 4. Add the header component to the quizPanel
@@ -254,55 +254,55 @@ public class Jeopardy implements ActionListener {
 	    	askQuestion("What enviroment has a Timed Security Chest?", "Rallypoint Delta", 600);
 	    	thirdButton2.setVisible(false);
 	    } else if(e.getSource() == fourthButton2) {
-	    	askQuestion("What enviroment?", "Acrid", 800);
+	    	askQuestion("What enviroment has no chests?", "Commencement", 800);
 	    	fourthButton2.setVisible(false);
 	    } else if(e.getSource() == fifthButton2) {
-	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
+	    	askQuestion("What enviroment has a Altar to N'Kuhana?", "Wetland Aspect", 1000);
 	    	fifthButton2.setVisible(false);
 	    } else if(e.getSource() == firstButton3) {
-			askQuestion("What survivor has a special that disables almost all attacks for 5 seconds?", "Railgunner", 200);
+			askQuestion("What hidden realm is acessed via Newt Altar?", "Bazaar Between Time", 200);
 			firstButton3.setVisible(false);
 	    } else if(e.getSource() == secondButton3) {
-	    	askQuestion("What survivor can obtain items and drones for free?", "Captain", 400);
+	    	askQuestion("What hidden realm can grant Artifacts?", "Bulwark's Ambry", 400);
 	    	secondButton3.setVisible(false);
 	    } else if(e.getSource() == thirdButton3) {
-	    	askQuestion("What survivor deals velocity based damage?", "Loader", 600);
+	    	askQuestion("What hidden realm has an entrance within another hidden realm?", "Void Fields", 600);
 	    	thirdButton3.setVisible(false);
 	    } else if(e.getSource() == fourthButton3) {
-	    	askQuestion("What survivor has two unique debuffs?", "Acrid", 800);
+	    	askQuestion("What hidden realm contains Aurelionite?", "Gilded Coast", 800);
 	    	fourthButton3.setVisible(false);
 	    } else if(e.getSource() == fifthButton3) {
-	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
+	    	askQuestion("What hidden realm grants a ending without a boss fight?", "A Moment, Fractured", 1000);
 	    	fifthButton3.setVisible(false);
 	    } else if(e.getSource() == firstButton4) {
-			askQuestion("What survivor has a special that disables almost all attacks for 5 seconds?", "Railgunner", 200);
+			askQuestion("What common item works as both a movement and attacks speed boosting item?", "Mocha", 200);
 			firstButton4.setVisible(false);
 	    } else if(e.getSource() == secondButton4) {
-	    	askQuestion("What survivor can obtain items and drones for free?", "Captain", 400);
+	    	askQuestion("What lunar item seems to do nothing... but..?", "Beads of Fealty", 400);
 	    	secondButton4.setVisible(false);
 	    } else if(e.getSource() == thirdButton4) {
-	    	askQuestion("What survivor deals velocity based damage?", "Loader", 600);
+	    	askQuestion("What green item gives an extra jump?", "Hopoo Feather", 600);
 	    	thirdButton4.setVisible(false);
 	    } else if(e.getSource() == fourthButton4) {
-	    	askQuestion("What survivor has two unique debuffs?", "Acrid", 800);
+	    	askQuestion("What red item permanently reduces the armor of hit enemies?", "Symbiotic Scorpion", 800);
 	    	fourthButton4.setVisible(false);
 	    } else if(e.getSource() == fifthButton4) {
-	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
+	    	askQuestion("What yellow item makes bleeding enemies explode?", "Shatterspleen", 1000);
 	    	fifthButton4.setVisible(false);
 	    } else if(e.getSource() == firstButton5) {
-			askQuestion("What survivor has a special that disables almost all attacks for 5 seconds?", "Railgunner", 200);
+			askQuestion("What special boss has the possibility of softlocking you if don't have enough damage?", "Kipkip the Gentle", 200);
 			firstButton5.setVisible(false);
 	    } else if(e.getSource() == secondButton5) {
-	    	askQuestion("What survivor can obtain items and drones for free?", "Captain", 400);
+	    	askQuestion("What enemy is technically three different enemies under the same name?", "Lunar Chimera", 400);
 	    	secondButton5.setVisible(false);
 	    } else if(e.getSource() == thirdButton5) {
-	    	askQuestion("What survivor deals velocity based damage?", "Loader", 600);
+	    	askQuestion("What enemy can split into two different enemies that can each split into four enemies total?", "Gup", 600);
 	    	thirdButton5.setVisible(false);
 	    } else if(e.getSource() == fourthButton5) {
-	    	askQuestion("What survivor has two unique debuffs?", "Acrid", 800);
+	    	askQuestion("What family of enemies have insta kill, on death explosions?", "Void Family", 800);
 	    	fourthButton5.setVisible(false);
 	    } else if(e.getSource() == fifthButton5) {
-	    	askQuestion("What survivor cannot be selected at the start of a run?", "Heretic", 1000);
+	    	askQuestion("What enemy will flee in fear?", "Hermit Crab", 1000);
 	    	fifthButton5.setVisible(false);
 	    }
 	    
