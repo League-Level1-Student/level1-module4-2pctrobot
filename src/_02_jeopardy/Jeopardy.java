@@ -302,7 +302,7 @@ public class Jeopardy implements ActionListener {
 	    	askQuestion("What family of enemies have insta kill, on death explosions?", "Void Family", 800);
 	    	fourthButton5.setVisible(false);
 	    } else if(e.getSource() == fifthButton5) {
-	    	askQuestion("What enemy will flee in fear?", "Hermit Crab", 1000);
+	    	askQuestion("What enemy will flee in fear when approached?", "Hermit Crab", 1000);
 	    	fifthButton5.setVisible(false);
 	    }
 	    
