@@ -1,5 +1,6 @@
 package _03_typing_tutor;
 
+import java.awt.Color;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Random;
@@ -27,9 +28,11 @@ public class TypingTutor implements KeyListener {
 		currentLetter = generateRandomLetter();
 		label.setFont(label.getFont().deriveFont(28.0f));
 		label.setHorizontalAlignment(JLabel.CENTER);
+		label.setText("" + currentLetter);
 		frame.addKeyListener(this);
 		frame.add(panel);
 		panel.add(label);
+		frame.pack();
 	}
 	char generateRandomLetter() {
 	    Random r = new Random();
@@ -43,7 +46,12 @@ public class TypingTutor implements KeyListener {
 	}
 	@Override
 	public void keyPressed(KeyEvent e) {
-		System.out.println("");
+		System.out.println("You Typed: " + e.getKeyChar());
+		if(e.getKeyChar() == currentLetter) {
+			panel.setBackground(Color.GREEN);
+		}else {
+			panel.setBackground(Color.RED);
+		}
 		
 	}
 	@Override
