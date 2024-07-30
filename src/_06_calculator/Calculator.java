@@ -18,6 +18,7 @@ public class Calculator implements ActionListener {
 	JButton div = new JButton();
 	JTextField field = new JTextField();
 	JTextField field2 = new JTextField();
+	
 	public static void main(String[] args) {
 		Calculator calc = new Calculator();
 		calc.run();
@@ -70,20 +71,22 @@ public class Calculator implements ActionListener {
 		frame.setTitle("Calculator");
 		frame.setVisible(true);
 		//frame.pack();
-		System.out.println(divide(9,3));
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		JButton buttonPressed = (JButton) arg0.getSource();
+		
+		int fieldint = (Integer.parseInt(field.getText()));
+		int fieldint2 = (Integer.parseInt(field2.getText()));
 		if(buttonPressed.equals(add)) {
-			System.out.println(add(field,field2));
+			System.out.println(add(fieldint,fieldint2));
 		} else if(buttonPressed.equals(sub)) {
-			System.out.println(sub(field,field2));
+			System.out.println(subtract(fieldint,fieldint2));
 		} else if(buttonPressed.equals(mul)) {
-			System.out.println(mul(field,field2));
+			System.out.println(multiply(fieldint,fieldint2));
 		} else if(buttonPressed.equals(div)) {
-			System.out.println(diiv(field,field2));
+			System.out.println(divide(fieldint,fieldint2));
 		}
 	}
 }
