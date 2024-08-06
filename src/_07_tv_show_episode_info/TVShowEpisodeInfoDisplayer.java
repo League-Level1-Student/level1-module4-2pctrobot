@@ -1,6 +1,7 @@
 package _07_tv_show_episode_info;
 
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -22,18 +23,25 @@ public class TVShowEpisodeInfoDisplayer implements ActionListener {
 	JFrame frame;
 	JPanel panel;
 	JPanel panel2;
-	public TVShowEpisodeInfoDisplayer(JButton submit,JTextField input,JFrame frame,JPanel panel,JPanel panel2) {
+	JPanel panel3;
+	public TVShowEpisodeInfoDisplayer(JButton submit,JTextField input,JFrame frame,JPanel panel,JPanel panel2,JPanel panel3) {
 		this.submit = submit;
 		this.input = input;
 		this.frame = frame;
 		this.panel = panel;
 		this.panel2 = panel2;
+		this.panel3 = panel3;
 		panel.add(submit);
-		panel2.add(input);
-		frame.add(panel2);
-		frame.add(panel);
+		panel2.add(this.input);
+		panel3.add(panel2);
+		panel3.add(panel);
+		frame.add(panel3);
 		frame.setVisible(true);
+		submit.setText("Submit");
 		submit.addActionListener(this);
+		panel3.setSize(225,75);
+		frame.setSize(225,75);
+		input.setPreferredSize(new Dimension(100,25));
 	}
 
 	
@@ -101,6 +109,6 @@ public class TVShowEpisodeInfoDisplayer implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		JOptionPane.showMessageDialog(null, getShowEpisodeData("" + this.input.getText()));
 	}
 }
