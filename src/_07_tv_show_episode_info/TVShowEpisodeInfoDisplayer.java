@@ -32,7 +32,7 @@ public class TVShowEpisodeInfoDisplayer implements ActionListener {
 		this.panel2 = panel2;
 		this.panel3 = panel3;
 		panel.add(submit);
-		panel2.add(this.input);
+		panel2.add(input);
 		panel3.add(panel2);
 		panel3.add(panel);
 		frame.add(panel3);
