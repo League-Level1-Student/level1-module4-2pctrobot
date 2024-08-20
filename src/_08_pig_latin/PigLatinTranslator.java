@@ -10,6 +10,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import game_tools.Sound;
+
 public class PigLatinTranslator implements ActionListener {
     /**
      * Method to translate a english to pig latin.
@@ -21,6 +23,7 @@ public class PigLatinTranslator implements ActionListener {
 	JButton translate;
 	JButton translate2;
 	JButton speak;
+	JButton speak2;
 	JTextField input;
 	JTextField input2;
 	JFrame frame;
@@ -29,16 +32,20 @@ public class PigLatinTranslator implements ActionListener {
 	JPanel panel3;
 	JPanel panel4;
 	JPanel panel5;
-	public PigLatinTranslator(JButton translate,JButton translate2,JButton speak,JTextField input,JTextField input2,JFrame frame,JPanel panel,JPanel panel2,JPanel panel3,JPanel panel4,JPanel panel5) {
+	public PigLatinTranslator(JButton translate,JButton translate2,JButton speak,JButton speak2,JTextField input,JTextField input2,JFrame frame,JPanel panel,JPanel panel2,JPanel panel3,JPanel panel4,JPanel panel5) {
 		this.translate = translate;
 		this.translate2 = translate2;
 		this.speak = speak;
+		this.speak2 = speak2;
 		this.input = input;
 		this.input2 = input2;
 		this.frame = frame;
 		this.panel = panel;
 		this.panel2 = panel2;
 		this.panel3 = panel3;
+		this.panel4 = panel4;
+		this.panel5 = panel5;
+		panel.add(speak2);
 		panel.add(input);
 		panel2.add(translate);
 		panel2.add(translate2);
@@ -53,11 +60,13 @@ public class PigLatinTranslator implements ActionListener {
 		translate.setText(">>");
 		translate2.setText("<<");
 		speak.setText("Speak");
+		speak2.setText("Speak");
 		translate.addActionListener(this);
 		translate2.addActionListener(this);
 		speak.addActionListener(this);
-		panel3.setSize(500,75);
-		frame.setSize(500,75);
+		speak2.addActionListener(this);
+		panel3.setSize(585,75);
+		frame.setSize(585,75);
 		input.setPreferredSize(new Dimension(100,25));
 		input2.setPreferredSize(new Dimension(100,25));
 		
@@ -66,6 +75,7 @@ public class PigLatinTranslator implements ActionListener {
 		JButton translate = new JButton();
 		JButton translate2 = new JButton();
 		JButton speak = new JButton();
+		JButton speak2 = new JButton();
 		JTextField input = new JTextField();
 		JTextField input2 = new JTextField();
 		JFrame frame = new JFrame();
@@ -74,7 +84,7 @@ public class PigLatinTranslator implements ActionListener {
 		JPanel panel3 = new JPanel();
 		JPanel panel4 = new JPanel();
 		JPanel panel5 = new JPanel();
-		PigLatinTranslator hogLanguage = new PigLatinTranslator(translate,translate2,speak,input,input2,frame,panel,panel2,panel3,panel4,panel5);
+		PigLatinTranslator hogLanguage = new PigLatinTranslator(translate,translate2,speak,speak2,input,input2,frame,panel,panel2,panel3,panel4,panel5);
 	}
     public static String translateEnglishToPigLatin(String s) {
         String latin = "";
@@ -192,11 +202,13 @@ public class PigLatinTranslator implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		JButton buttonPressed = (JButton) e.getSource();
 		if(e.getSource() == translate) {
-			input2.setText(translatePigLatinToEnglish("" + this.input.getText()));
+			input2.setText(translateEnglishToPigLatin("" + this.input.getText()));
 	    } else if(e.getSource() == translate2) {
 	    	input.setText(translatePigLatinToEnglish("" + this.input2.getText()));
 	    } else if(e.getSource() == speak) {
-	    	JOptionPane.showMessageDialog(null, "Wasabi?");
+	    	Sound.speak("" + this.input2.getText());
+	    } else if(e.getSource() == speak2) {
+	    	Sound.speak("" + this.input.getText());
 		
 	}
 }
