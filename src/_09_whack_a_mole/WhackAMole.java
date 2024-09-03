@@ -2,10 +2,12 @@ package _09_whack_a_mole;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Date;
 import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class WhackAMole implements ActionListener {
@@ -36,6 +38,10 @@ public class WhackAMole implements ActionListener {
 	JButton molespot23;
 	JButton molespot24;
 	int critMole;
+	int hits;
+	int misses;
+	Date clock = new Date();
+	
 	public WhackAMole(JFrame frame,JPanel panel,JButton molespot01,JButton molespot02,JButton molespot03,JButton molespot04,JButton molespot05,JButton molespot06,JButton molespot07,JButton molespot08,JButton molespot09,JButton molespot10,JButton molespot11,JButton molespot12,JButton molespot13,JButton molespot14,JButton molespot15,JButton molespot16,JButton molespot17,JButton molespot18,JButton molespot19,JButton molespot20,JButton molespot21,JButton molespot22,JButton molespot23,JButton molespot24) {
 	this.frame = frame;
 	this.panel = panel;
@@ -121,6 +127,30 @@ public class WhackAMole implements ActionListener {
 private void chooseSpot() {
 	int number = 0;
 	critMole=25;
+	molespot01.setText("");
+	molespot02.setText("");
+	molespot03.setText("");
+	molespot04.setText("");
+	molespot05.setText("");
+	molespot06.setText("");
+	molespot07.setText("");
+	molespot08.setText("");
+	molespot09.setText("");
+	molespot10.setText("");
+	molespot11.setText("");
+	molespot12.setText("");
+	molespot13.setText("");
+	molespot14.setText("");
+	molespot15.setText("");
+	molespot16.setText("");
+	molespot17.setText("");
+	molespot18.setText("");
+	molespot19.setText("");
+	molespot20.setText("");
+	molespot21.setText("");
+	molespot22.setText("");
+	molespot23.setText("");
+	molespot24.setText("");
 	Random ran = new Random();
 	number = ran.nextInt(24);
 	if (number == 0) {
@@ -231,1255 +261,830 @@ public static void main(String[] args) {
 public void actionPerformed(ActionEvent e) {
 	if(critMole==0) {
 		if(e.getSource() == molespot01) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
+			
+			
 		}
 	}else if(critMole==1) {
 		if(e.getSource() == molespot02) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==2) {
 		if(e.getSource() == molespot03) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==3) {
 		if(e.getSource() == molespot04) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==4) {
 		if(e.getSource() == molespot05) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==5) {
 		if(e.getSource() == molespot06) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==6) {
 		if(e.getSource() == molespot07) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==7) {
 		if(e.getSource() == molespot08) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==8) {
 		if(e.getSource() == molespot09) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==9) {
 		if(e.getSource() == molespot10) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==10) {
 		if(e.getSource() == molespot11) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==11) {
 		if(e.getSource() == molespot12) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==12) {
 		if(e.getSource() == molespot13) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==13) {
 		if(e.getSource() == molespot14) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==14) {
 		if(e.getSource() == molespot15) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==15) {
 		if(e.getSource() == molespot16) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==16) {
 		if(e.getSource() == molespot17) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==17) {
 		if(e.getSource() == molespot18) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==18) {
 		if(e.getSource() == molespot19) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==19) {
 		if(e.getSource() == molespot20) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==20) {
 		if(e.getSource() == molespot21) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==21) {
 		if(e.getSource() == molespot22) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==22) {
 		if(e.getSource() == molespot23) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}else if(critMole==23) {
 		if(e.getSource() == molespot24) {
-			molespot01.setText("RIGHT");
-			molespot02.setText("RIGHT");
-			molespot03.setText("RIGHT");
-			molespot04.setText("RIGHT");
-			molespot05.setText("RIGHT");
-			molespot06.setText("RIGHT");
-			molespot07.setText("RIGHT");
-			molespot08.setText("RIGHT");
-			molespot09.setText("RIGHT");
-			molespot10.setText("RIGHT");
-			molespot11.setText("RIGHT");
-			molespot12.setText("RIGHT");
-			molespot13.setText("RIGHT");
-			molespot14.setText("RIGHT");
-			molespot15.setText("RIGHT");
-			molespot16.setText("RIGHT");
-			molespot17.setText("RIGHT");
-			molespot18.setText("RIGHT");
-			molespot19.setText("RIGHT");
-			molespot20.setText("RIGHT");
-			molespot21.setText("RIGHT");
-			molespot22.setText("RIGHT");
-			molespot23.setText("RIGHT");
-			molespot24.setText("RIGHT");
+			speak("Hit!");
+			chooseSpot();
+			hits++;
+			if (hits == 10) {
+				endGame(clock,hits);
+			}
 		}else {
-			molespot01.setText("WRONG");
-			molespot02.setText("WRONG");
-			molespot03.setText("WRONG");
-			molespot04.setText("WRONG");
-			molespot05.setText("WRONG");
-			molespot06.setText("WRONG");
-			molespot07.setText("WRONG");
-			molespot08.setText("WRONG");
-			molespot09.setText("WRONG");
-			molespot10.setText("WRONG");
-			molespot11.setText("WRONG");
-			molespot12.setText("WRONG");
-			molespot13.setText("WRONG");
-			molespot14.setText("WRONG");
-			molespot15.setText("WRONG");
-			molespot16.setText("WRONG");
-			molespot17.setText("WRONG");
-			molespot18.setText("WRONG");
-			molespot19.setText("WRONG");
-			molespot20.setText("WRONG");
-			molespot21.setText("WRONG");
-			molespot22.setText("WRONG");
-			molespot23.setText("WRONG");
-			molespot24.setText("WRONG");
+			if (misses == 0) {
+				speak("Miss! Four Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 1) {
+				speak("Miss! Three Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 2) {
+				speak("Miss! Two Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 3) {
+				speak("Miss! One Chance Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 4) {
+				speak("Miss! No Chances Remain");
+				chooseSpot();
+				misses++;
+			}else if(misses == 5) {
+				speak("Too many misses. GAME OVER.");
+				System.exit(0);
+			}
 		}
 	}
 	
 }
+private void endGame(Date timeAtStart, int molesWhacked) { 
+    Date timeAtEnd = new Date();
+    JOptionPane.showMessageDialog(null, "Your whack rate is "
+            + ((timeAtEnd.getTime() - timeAtStart.getTime()) / 1000.00 / molesWhacked)
+                  + " moles per second.");}
 static void speak(String words) {
     if( System.getProperty( "os.name" ).contains( "Windows" ) ) {
         String cmd = "PowerShell -Command \"Add-Type -AssemblyName System.Speech; (New-Object System.Speech.Synthesis.SpeechSynthesizer).Speak('"
