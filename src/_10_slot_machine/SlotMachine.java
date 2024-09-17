@@ -2,8 +2,11 @@ package _10_slot_machine;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.Random;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -12,7 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class SlotMachine {
+public class SlotMachine implements ActionListener {
 	JFrame frame;
 	JPanel panel1;
 	JPanel panel2;
@@ -22,6 +25,12 @@ public class SlotMachine {
 	JLabel label2;
 	JLabel label3;
 	JButton aspectGamble;
+	int number1;
+	int number2;
+	int number3;
+	Random ran1 = new Random();
+	Random ran2 = new Random();
+	Random ran3 = new Random();
 	
 	public SlotMachine(JFrame frame, JPanel panel1, JPanel panel2, JPanel panel3, JPanel panel4, JLabel label1, JLabel label2, JLabel label3, JButton aspectGamble) throws MalformedURLException {
 		this.frame = frame;
@@ -32,10 +41,11 @@ public class SlotMachine {
 		this.label1 = label1;
 		this.label2 = label2;
 		this.label3 = label3;
-		label1 = createLabelImage("spite.jpg");
-		label2 = new JLabel("0");
-		label3 = new JLabel("0");
+		label1 = createLabelImage("Blorb.jpeg");
+		label2 = createLabelImage("Blorb.jpeg");
+		label3 = createLabelImage("Blorb.jpeg");
 		this.aspectGamble = aspectGamble;
+		aspectGamble.addActionListener(this);
 		frame.setLayout(new FlowLayout());
 		frame.add(panel1);
 		frame.add(panel2);
@@ -52,7 +62,7 @@ public class SlotMachine {
 		panel1.setSize(64,64);
 		panel2.setSize(64,64);
 		panel3.setSize(64,64);
-		frame.setSize(192,64);
+		frame.setSize(334,104);
 		
 	}
 
@@ -77,4 +87,78 @@ public static void main(String[] args) throws MalformedURLException {
 	JLabel label3 = new JLabel();
 	JButton aspectGamble = new JButton();
 	SlotMachine aspect = new SlotMachine(frame, panel1, panel2, panel3, panel4, label1, label2, label3, aspectGamble);
+}
+
+@Override
+public void actionPerformed(ActionEvent e) {
+	try {
+		reroll();
+	} catch (MalformedURLException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	}
+	
+}
+
+private void reroll() throws MalformedURLException {
+	number1 = ran1.nextInt(9);
+	if(number1==0) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}else if(number1==1) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}else if(number1==2) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}else if(number1==3) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}else if(number1==4) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}else if(number1==5) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}else if(number1==6) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}else if(number1==7) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}else if(number1==8) {
+		label1 = createLabelImage("Spectral_Circlet.jpeg");
+	}
+number2 = ran2.nextInt(9);
+if(number1==0) {
+	
+}else if(number1==1) {
+	
+}else if(number1==2) {
+	
+}else if(number1==3) {
+	
+}else if(number1==4) {
+	
+}else if(number1==5) {
+	
+}else if(number1==6) {
+	
+}else if(number1==7) {
+	
+}else if(number1==8) {
+	
+}
+number3 = ran3.nextInt(9);
+if(number1==0) {
+	
+}else if(number1==1) {
+	
+}else if(number1==2) {
+	
+}else if(number1==3) {
+	
+}else if(number1==4) {
+	
+}else if(number1==5) {
+	
+}else if(number1==6) {
+	
+}else if(number1==7) {
+	
+}else if(number1==8) {
+	
+}
 }}
