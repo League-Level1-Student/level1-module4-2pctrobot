@@ -41,9 +41,9 @@ public class SlotMachine implements ActionListener {
 		this.label1 = label1;
 		this.label2 = label2;
 		this.label3 = label3;
-		label1 = createLabelImage("Blorb.jpeg");
-		label2 = createLabelImage("Blorb.jpeg");
-		label3 = createLabelImage("Blorb.jpeg");
+		label1 = createLabelImage("Cloak.jpg");
+		label2 = createLabelImage("Blazing.jpg");
+		label3 = createLabelImage("Cloak.jpg");
 		this.aspectGamble = aspectGamble;
 		aspectGamble.addActionListener(this);
 		frame.setLayout(new FlowLayout());
@@ -66,16 +66,23 @@ public class SlotMachine implements ActionListener {
 		
 	}
 
-	private JLabel createLabelImage(String fileName) throws MalformedURLException{
-        URL imageURL = getClass().getResource(fileName);
+	private JLabel createLabelImage(String fileName){
+		
+        Icon icon = createIcon(fileName);
+	JLabel imageLabel = new JLabel(icon);
+	return imageLabel;
+}
+
+	private Icon createIcon(String fileName) {
+		URL imageURL = getClass().getResource(fileName);
 	if (imageURL == null){
 		System.err.println("Could not find image " + fileName);
 		return new JLabel();
 	}
 	Icon icon = new ImageIcon(imageURL);
-	JLabel imageLabel = new JLabel(icon);
-	return imageLabel;
-}
+		return icon;
+	}
+	
 public static void main(String[] args) throws MalformedURLException {
 	JFrame frame = new JFrame();
 	JPanel panel1 = new JPanel();
@@ -91,35 +98,34 @@ public static void main(String[] args) throws MalformedURLException {
 
 @Override
 public void actionPerformed(ActionEvent e) {
-	try {
-		reroll();
-	} catch (MalformedURLException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
-	
-}
-
-private void reroll() throws MalformedURLException {
 	number1 = ran1.nextInt(9);
 	if(number1==0) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1.setIcon(createIcon("Blazing.jpg"));
+		frame.pack();
 	}else if(number1==1) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1 = createLabelImage("Blazing.jpg");
+		frame.pack();
 	}else if(number1==2) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1 = createLabelImage("Blazing.jpg");
+		frame.pack();
 	}else if(number1==3) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1 = createLabelImage("Blazing.jpg");
+		frame.pack();
 	}else if(number1==4) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1 = createLabelImage("Blazing.jpg");
+		frame.pack();
 	}else if(number1==5) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1 = createLabelImage("Blazing.jpg");
+		frame.pack();
 	}else if(number1==6) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1 = createLabelImage("Blazing.jpg");
+		frame.pack();
 	}else if(number1==7) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1 = createLabelImage("Blazing.jpg");
+		frame.pack();
 	}else if(number1==8) {
-		label1 = createLabelImage("Spectral_Circlet.jpeg");
+		label1 = createLabelImage("Blazing.jpg");
+		frame.pack();
 	}
 number2 = ran2.nextInt(9);
 if(number1==0) {
@@ -161,4 +167,12 @@ if(number1==0) {
 }else if(number1==8) {
 	
 }
-}}
+		// TODO Auto-generated catch block
+
+	}
+	
+
+
+
+
+}
