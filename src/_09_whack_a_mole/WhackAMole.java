@@ -269,23 +269,23 @@ public void actionPerformed(ActionEvent e) {
 			}
 		}else {
 			if (misses == 0) {
-				speak("Miss! Four Chances Remain");
+				speak("No.");
 				chooseSpot();
 				misses++;
 			}else if(misses == 1) {
-				speak("Miss! Three Chances Remain");
+				speak("Miss.");
 				chooseSpot();
 				misses++;
 			}else if(misses == 2) {
-				speak("Miss! Two Chances Remain");
+				speak("Nope.");
 				chooseSpot();
 				misses++;
 			}else if(misses == 3) {
-				speak("Miss! One Chance Remain");
+				speak("Absolutely not.");
 				chooseSpot();
 				misses++;
 			}else if(misses == 4) {
-				speak("Miss! No Chances Remain");
+				speak("One more miss and you're outta here!");
 				chooseSpot();
 				misses++;
 			}else if(misses == 5) {
