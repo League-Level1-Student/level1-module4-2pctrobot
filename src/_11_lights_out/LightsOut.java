@@ -4,9 +4,11 @@ import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -22,7 +24,31 @@ import javax.swing.JPanel;
 public class LightsOut implements MouseListener {
 
 	JPanel gamePanel = new JPanel();
-
+	JLabel light00 = new JLabel();
+	JLabel light01 = new JLabel();
+	JLabel light02 = new JLabel();
+	JLabel light03 = new JLabel();
+	JLabel light04 = new JLabel();
+	JLabel light05 = new JLabel();
+	JLabel light06 = new JLabel();
+	JLabel light07 = new JLabel();
+	JLabel light08 = new JLabel();
+	JLabel light09 = new JLabel();
+	JLabel light10 = new JLabel();
+	JLabel light11 = new JLabel();
+	JLabel light12 = new JLabel();
+	JLabel light13 = new JLabel();
+	JLabel light14 = new JLabel();
+	JLabel light15 = new JLabel();
+	JLabel light16 = new JLabel();
+	JLabel light17 = new JLabel();
+	JLabel light18 = new JLabel();
+	JLabel light19 = new JLabel();
+	JLabel light20 = new JLabel();
+	JLabel light21 = new JLabel();
+	JLabel light22 = new JLabel();
+	JLabel light23 = new JLabel();
+	JLabel light24 = new JLabel();
 	public LightsOut() {
 
 		/** PART 1. CREATE YOUR LIGHT BOARD **/
@@ -30,31 +56,7 @@ public class LightsOut implements MouseListener {
 		gamePanel.setLayout(new GridLayout(5, 5));
 		
 			//2. Add 25 JLabels to your gamePanel (these are your lights)
-JLabel light00 = new JLabel();
-JLabel light01 = new JLabel();
-JLabel light02 = new JLabel();
-JLabel light03 = new JLabel();
-JLabel light04 = new JLabel();
-JLabel light05 = new JLabel();
-JLabel light06 = new JLabel();
-JLabel light07 = new JLabel();
-JLabel light08 = new JLabel();
-JLabel light09 = new JLabel();
-JLabel light10 = new JLabel();
-JLabel light11 = new JLabel();
-JLabel light12 = new JLabel();
-JLabel light13 = new JLabel();
-JLabel light14 = new JLabel();
-JLabel light15 = new JLabel();
-JLabel light16 = new JLabel();
-JLabel light17 = new JLabel();
-JLabel light18 = new JLabel();
-JLabel light19 = new JLabel();
-JLabel light20 = new JLabel();
-JLabel light21 = new JLabel();
-JLabel light22 = new JLabel();
-JLabel light23 = new JLabel();
-JLabel light24 = new JLabel();
+
 gamePanel.add(light00);
 gamePanel.add(light01);
 gamePanel.add(light02);
@@ -81,16 +83,16 @@ gamePanel.add(light22);
 gamePanel.add(light23);
 gamePanel.add(light24);
 			//3. Use setText() to add a position number to each light (0-24).
-lightText(light00, "00");
-light01.setText("01");
-light02.setText("02");
-light03.setText("03");
-light04.setText("04");
-light05.setText("05");
-light06.setText("06");
-light07.setText("07");
-light08.setText("08");
-light09.setText("09");
+lightText(light00, "0");
+light01.setText("1");
+light02.setText("2");
+light03.setText("3");
+light04.setText("4");
+light05.setText("5");
+light06.setText("6");
+light07.setText("7");
+light08.setText("8");
+light09.setText("9");
 light10.setText("10");
 light11.setText("11");
 light12.setText("12");
@@ -203,20 +205,147 @@ frame.setSize(500, 500);
 		/** PART 2: TOGGLE NEIGHBORING LIGHTS **/
 		// 1. Get the light that was clicked on `(JLabel) e.getSource`
 System.out.println((JLabel) e.getSource());
-
+JLabel labelPressed  = (JLabel)e.getSource();
+int position = Integer.valueOf(labelPressed.getText());
 		// 2. Get the number (position) of the light
-
-		// 3. Now use the makeMove method to code which lights turn on and off.
+if(position == 0) {
+	makeMove(position);
+} else if(position == 1) {
+	makeMove(position);
+} else if(position == 2) {
+	makeMove(position);
+} else if(position == 3) {
+	makeMove(position);
+} else if(position == 4) {
+	makeMove(position);
+} else if(position == 5) {
+	makeMove(position);
+} else if(position == 6) {
+	makeMove(position);
+} else if(position == 7) {
+	makeMove(position);
+} else if(position == 8) {
+	makeMove(position);
+} else if(position == 9) {
+	makeMove(position);
+} else if(position == 10) {
+	makeMove(position);
+} else if(position == 11) {
+	makeMove(position);
+} else if(position == 12) {
+	makeMove(position);
+} else if(position == 13) {
+	makeMove(position);
+} else if(position == 14) {
+	makeMove(position);
+} else if(position == 15) {
+	makeMove(position);
+} else if(position == 16) {
+	makeMove(position);
+} else if(position == 17) {
+	makeMove(position);
+} else if(position == 18) {
+	makeMove(position);
+} else if(position == 19) {
+	makeMove(position);
+} else if(position == 20) {
+	makeMove(position);
+} else if(position == 21) {
+	makeMove(position);
+} else if(position == 22) {
+	makeMove(position);
+} else if(position == 23) {
+	makeMove(position);
+} else if(position == 24) {
+	makeMove(position);
+}	// 3. Now use the makeMove method to code which lights turn on and off.
 
 		// 4.Check if the player has won (e.g. all the lights are off)
 		// ---- HINT: use `getLightAtPosition` to get the light at each position
 		// ---------- use 'getBackground' to get the light color
-
+if(light00.getBackground()==Color.WHITE &&light01.getBackground()==Color.WHITE&&light02.getBackground()==Color.WHITE &&light03.getBackground()==Color.WHITE &&light04.getBackground()==Color.WHITE&&light05.getBackground()==Color.WHITE &&light06.getBackground()==Color.WHITE&&light07.getBackground()==Color.WHITE &&light08.getBackground()==Color.WHITE &&light09.getBackground()==Color.WHITE&&light10.getBackground()==Color.WHITE &&light11.getBackground()==Color.WHITE&&light12.getBackground()==Color.WHITE &&light13.getBackground()==Color.WHITE &&light14.getBackground()==Color.WHITE&&light15.getBackground()==Color.WHITE &&light16.getBackground()==Color.WHITE&&light17.getBackground()==Color.WHITE &&light18.getBackground()==Color.WHITE &&light19.getBackground()==Color.WHITE&&light20.getBackground()==Color.WHITE &&light21.getBackground()==Color.WHITE&&light22.getBackground()==Color.WHITE &&light23.getBackground()==Color.WHITE &&light24.getBackground()==Color.WHITE) {
+	JOptionPane.showMessageDialog(null, "You did it! Good job!");
+}
 		/** PART 3: RANDOMIZE YOUR BOARD **/
 		// Now that your game works can you make the game start with some lights on?
-
+int number0 = 0;
+Random ran0 = new Random();
+number0 = ran0.nextInt(2);
+int number1 = 0;
+Random ran1 = new Random();
+number1 = ran0.nextInt(2);
+int number2 = 0;
+Random ran2 = new Random();
+number2 = ran0.nextInt(2);
+int number3 = 0;
+Random ran3 = new Random();
+number3 = ran0.nextInt(2);
+int number4 = 0;
+Random ran4 = new Random();
+number4 = ran0.nextInt(2);
+int number5 = 0;
+Random ran5 = new Random();
+number5 = ran0.nextInt(2);
+int number6 = 0;
+Random ran6 = new Random();
+number6 = ran0.nextInt(2);
+int number7 = 0;
+Random ran7 = new Random();
+number7 = ran0.nextInt(2);
+int number8 = 0;
+Random ran8 = new Random();
+number8 = ran0.nextInt(2);
+int number9 = 0;
+Random ran9 = new Random();
+number9 = ran0.nextInt(2);
+int number10 = 0;
+Random ran10 = new Random();
+number10 = ran0.nextInt(2);
+int number11 = 0;
+Random ran11 = new Random();
+number11 = ran0.nextInt(2);
+int number12 = 0;
+Random ran12 = new Random();
+number12 = ran0.nextInt(2);
+int number13 = 0;
+Random ran13 = new Random();
+number13 = ran0.nextInt(2);
+int number14 = 0;
+Random ran14 = new Random();
+number14 = ran0.nextInt(2);
+int number15 = 0;
+Random ran15 = new Random();
+number15 = ran0.nextInt(2);
+int number16 = 0;
+Random ran16 = new Random();
+number0 = ran0.nextInt(2);
+int number17 = 0;
+Random ran17 = new Random();
+number0 = ran0.nextInt(2);
+int number18 = 0;
+Random ran18 = new Random();
+number0 = ran0.nextInt(2);
+int number19 = 0;
+Random ran19 = new Random();
+number0 = ran0.nextInt(2);
+int number20 = 0;
+Random ran20 = new Random();
+number0 = ran0.nextInt(2);
+int number21 = 0;
+Random ran21 = new Random();
+number0 = ran0.nextInt(2);
+int number22 = 0;
+Random ran22 = new Random();
+number0 = ran0.nextInt(2);
+int number23 = 0;
+Random ran23 = new Random();
+number0 = ran0.nextInt(2);
+int number24 = 0;
+Random ran24 = new Random();
+number0 = ran0.nextInt(2);
 	}
 
+	
 	void makeMove(int pos) {
 		toggle((JLabel) gamePanel.getComponent(pos));
 		if (pos >= 5) {
@@ -239,7 +368,7 @@ System.out.println((JLabel) e.getSource());
 
 	void toggle(JLabel label) {
 		if (label.getBackground() == Color.WHITE) {
-			label.setBackground(Color.LIGHT_GRAY);
+			label.setBackground(Color.GRAY);
 
 		} else {
 			label.setBackground(Color.WHITE);
