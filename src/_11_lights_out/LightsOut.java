@@ -194,6 +194,17 @@ frame.add(gamePanel);
 frame.setVisible(true);
 		//7. Set the size of the frame
 frame.setSize(500, 500);
+int number1;
+Random ran1 = new Random();
+int number2;
+Random ran2 = new Random();
+number2 = ran2.nextInt(100);
+for (int i = 0; i < number2; i++) {
+	number1 = ran1.nextInt(25);
+	makeMove(number1);
+	}
+
+
 	}
 
 	private void lightText(JLabel light00, String text) {
@@ -264,86 +275,86 @@ if(position == 0) {
 		// ---- HINT: use `getLightAtPosition` to get the light at each position
 		// ---------- use 'getBackground' to get the light color
 if(light00.getBackground()==Color.WHITE &&light01.getBackground()==Color.WHITE&&light02.getBackground()==Color.WHITE &&light03.getBackground()==Color.WHITE &&light04.getBackground()==Color.WHITE&&light05.getBackground()==Color.WHITE &&light06.getBackground()==Color.WHITE&&light07.getBackground()==Color.WHITE &&light08.getBackground()==Color.WHITE &&light09.getBackground()==Color.WHITE&&light10.getBackground()==Color.WHITE &&light11.getBackground()==Color.WHITE&&light12.getBackground()==Color.WHITE &&light13.getBackground()==Color.WHITE &&light14.getBackground()==Color.WHITE&&light15.getBackground()==Color.WHITE &&light16.getBackground()==Color.WHITE&&light17.getBackground()==Color.WHITE &&light18.getBackground()==Color.WHITE &&light19.getBackground()==Color.WHITE&&light20.getBackground()==Color.WHITE &&light21.getBackground()==Color.WHITE&&light22.getBackground()==Color.WHITE &&light23.getBackground()==Color.WHITE &&light24.getBackground()==Color.WHITE) {
-	JOptionPane.showMessageDialog(null, "You did it! Good job!");
+	JOptionPane.showMessageDialog(null, "You did it! Good job!");}
 }
 		/** PART 3: RANDOMIZE YOUR BOARD **/
 		// Now that your game works can you make the game start with some lights on?
-int number0 = 0;
+/**int number0 = 0;
 Random ran0 = new Random();
 number0 = ran0.nextInt(2);
 int number1 = 0;
 Random ran1 = new Random();
-number1 = ran0.nextInt(2);
+number1 = ran1.nextInt(2);
 int number2 = 0;
 Random ran2 = new Random();
-number2 = ran0.nextInt(2);
+number2 = ran2.nextInt(2);
 int number3 = 0;
 Random ran3 = new Random();
-number3 = ran0.nextInt(2);
+number3 = ran3.nextInt(2);
 int number4 = 0;
 Random ran4 = new Random();
-number4 = ran0.nextInt(2);
+number4 = ran4.nextInt(2);
 int number5 = 0;
 Random ran5 = new Random();
-number5 = ran0.nextInt(2);
+number5 = ran5.nextInt(2);
 int number6 = 0;
 Random ran6 = new Random();
-number6 = ran0.nextInt(2);
+number6 = ran6.nextInt(2);
 int number7 = 0;
 Random ran7 = new Random();
-number7 = ran0.nextInt(2);
+number7 = ran7.nextInt(2);
 int number8 = 0;
 Random ran8 = new Random();
-number8 = ran0.nextInt(2);
+number8 = ran8.nextInt(2);
 int number9 = 0;
 Random ran9 = new Random();
-number9 = ran0.nextInt(2);
+number9 = ran9.nextInt(2);
 int number10 = 0;
 Random ran10 = new Random();
-number10 = ran0.nextInt(2);
+number10 = ran10.nextInt(2);
 int number11 = 0;
 Random ran11 = new Random();
-number11 = ran0.nextInt(2);
+number11 = ran11.nextInt(2);
 int number12 = 0;
 Random ran12 = new Random();
-number12 = ran0.nextInt(2);
+number12 = ran12.nextInt(2);
 int number13 = 0;
 Random ran13 = new Random();
-number13 = ran0.nextInt(2);
+number13 = ran13.nextInt(2);
 int number14 = 0;
 Random ran14 = new Random();
-number14 = ran0.nextInt(2);
+number14 = ran14.nextInt(2);
 int number15 = 0;
 Random ran15 = new Random();
-number15 = ran0.nextInt(2);
+number15 = ran15.nextInt(2);
 int number16 = 0;
 Random ran16 = new Random();
-number0 = ran0.nextInt(2);
+number0 = ran16.nextInt(2);
 int number17 = 0;
 Random ran17 = new Random();
-number0 = ran0.nextInt(2);
+number0 = ran17.nextInt(2);
 int number18 = 0;
 Random ran18 = new Random();
-number0 = ran0.nextInt(2);
+number0 = ran18.nextInt(2);
 int number19 = 0;
 Random ran19 = new Random();
-number0 = ran0.nextInt(2);
+number0 = ran19.nextInt(2);
 int number20 = 0;
 Random ran20 = new Random();
-number0 = ran0.nextInt(2);
+number0 = ran20.nextInt(2);
 int number21 = 0;
 Random ran21 = new Random();
-number0 = ran0.nextInt(2);
+number0 = ran21.nextInt(2);
 int number22 = 0;
 Random ran22 = new Random();
-number0 = ran0.nextInt(2);
+number0 = ran22.nextInt(2);
 int number23 = 0;
 Random ran23 = new Random();
-number0 = ran0.nextInt(2);
+number0 = ran23.nextInt(2);
 int number24 = 0;
 Random ran24 = new Random();
-number0 = ran0.nextInt(2);
-	}
+number0 = ran24.nextInt(2);
+	}**/
 
 	
 	void makeMove(int pos) {
